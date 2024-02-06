@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        #view_order {
+            width: 95%;
+            height: 50%;
+            background: antiquewhite;
+            margin-left: 2.5%;
+        }
+
+        #view_order table {
+            width: 100%;
+            border: 2px solid black;
+            margin-left: 5px;
+            margin-top: 5px;
+        }
+
+        #view_order_table_header th {
+            border: 2px solid black;
+            background: rgb(128, 128, 128);
+            color: white;
+        }
+
+        #view_order_table_body th {
+            background: floralwhite;
+        }
+
+    </style>
+</head>
+<body>
+<div id="view_order">
+    <table id="view_order_table">
+        <form action="/get/materials" method="post">
+            <tr id="view_order_table_header">
+                <th>ID</th>
+                <th>Machine name</th>
+                <th>Machine id</th>
+                <th>View order</th>
+                <th>Material</th>
+                <th>Quantity</th>
+            </tr>
+            <tr id="view_order_table_body" th:each="materials : ${materials}">
+                <th th:text="${materials.getId()}"></th>
+                <th th:text="${materials.getMachineName()}"></th>
+                <th th:text="${materials.getMachineId()}"></th>
+                <th th:text="${materials.getViewOrder()}"></th>
+                <th th:text="${materials.getMaterial()}"></th>
+                <th th:text="${materials.getQuantity()}"></th>
+            </tr>
+        </form>
+    </table>
+</div>
+<form action="/get/materials" method="post">
+    <div>
+        <input id="id" type="number" readonly="readonly" placeholder="Enter id element" name="idElement">
+        <input id="del_element_by_id" type="submit" value="Delete" name="delete">
+    </div>
+</form>
+
+<script>
+    const order = document.getElementById("view_order_table_body");
+    order.addEventListener("click", go);
+
+    function go() {
+        let text = document.getElementById("view_order_table_body");
+        let element = document.getElementById('id');
+        element.value = text.innerText;
+    }
+</script>
+</body>
+</html>

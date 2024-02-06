@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Order</title>
+    <style>
+        #view_order {
+            width: 95%;
+            height: 50%;
+            background: antiquewhite;
+            margin-left: 2.5%;
+        }
+
+        #view_order table {
+            width: 100%;
+            border: 2px solid black;
+            margin-left: 5px;
+            margin-top: 5px;
+        }
+
+        #view_order_table_header th {
+            border: 2px solid black;
+            background: rgb(128, 128, 128);
+            color: white;
+        }
+
+        #view_order_table_body th {
+            background: floralwhite;
+        }
+    </style>
+</head>
+<body>
+<div id="view_order">
+    <table id="view_order_table">
+        <form action="/get/allMaterial" method="post">
+            <tr id="view_order_table_header">
+                <th>ID</th>
+                <th>Machine name</th>
+                <th>Machine id</th>
+                <th>View order</th>
+                <th>Material</th>
+                <th>Quantity</th>
+                <th>DELETE</th>
+            </tr>
+            <tr id="view_order_table_body" th:each="mat : ${material}">
+                <th th:text="${mat.getId()}"></th>
+                <th th:text="${mat.getMachineName()}"></th>
+                <th th:text="${mat.getMachineId()}"></th>
+                <th th:text="${mat.getViewOrder()}"></th>
+                <th th:text="${mat.getMaterial()}"></th>
+                <th th:text="${mat.getQuantity()}"></th>
+                <th>
+                    <input id="id" type="hidden" th:value="${mat.getId()}" name="id">
+                    <input id="check_all" type="submit" value="Delete" name="delete">
+                </th>
+            </tr>
+        </form>
+    </table>
+    <div th:each="exc:${exc}">
+        <p th:text="${exc}"></p>
+    </div>
+</div>
+</body>
+</html>
