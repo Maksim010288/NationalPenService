@@ -1,14 +1,7 @@
+.idea/
+.mvn/
 HELP.md
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-.mvn
+NationalPen.iml
 mvnw
 mvnw.cmd
-
-
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
+target/
