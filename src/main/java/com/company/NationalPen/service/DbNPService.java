@@ -30,4 +30,9 @@ public class DbNPService {
         penRepository.deleteById(id.longValue());
         return url;
     }
+
+    public String deleteAll(String url) {
+        penRepository.deleteAll();
+        return url;
+    }
 }
