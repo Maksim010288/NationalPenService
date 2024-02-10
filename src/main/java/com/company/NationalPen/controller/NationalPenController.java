@@ -28,6 +28,7 @@ public class NationalPenController {
     private DepartmentsNationalPen departmentsNationalPen = new DepartmentsNationalPen();
     private MachineIdNationalPen machineId = new MachineIdNationalPen();
     private NationalPenService nationalPenService = new NationalPenService();
+    private Model model;
 
 
     @GetMapping("get/name")
@@ -68,8 +69,19 @@ public class NationalPenController {
         return "getOrder";
     }
 
+    @GetMapping("NationalPenService/dataDisplaySystem/get/materials")
+    public String getMaterialsBy(Model model) {
+        model.addAttribute("materials", dbNPService.viewMaterial());
+        return "getOrder";
+    }
+
     @PostMapping("get/materials")
-    public String delMaterials(@RequestParam() Integer idElement) {
+    public String delMaterialById(@RequestParam() Integer idElement) {
         return dbNPService.deleteById(idElement, url);
+    }
+
+    @GetMapping("del/allElements")
+    public String delAllMaterials() {
+        return dbNPService.deleteAll(url);
     }
 }
