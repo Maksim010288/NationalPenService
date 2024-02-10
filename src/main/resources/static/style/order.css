@@ -1,3 +1,15 @@
+body{
+    cursor: alias;
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShrmwGPBPDAtu-qQtsTqu147qRL-ebMp0Y4SoaRl2gdQ&s");
+}
+
+#header_national_pen_page{
+    width: 100%;
+    height: 80px;
+    background: red;
+}
+
+
 #id {
     margin-top: 5px;
     margin-left: 5px;
@@ -5,19 +17,19 @@
 
 #main_window {
     width: 90%;
-    height: 90%;
+    height: 80%;
     background-color: blue;
     border-radius: 10px;
     border: 2px solid black;
     margin-left: 5%;
-    margin-top: 3%;
+    margin-top: 1%;
     overflow: hidden;
     position: fixed;
 }
 
 #view_order {
     width: 70%;
-    height: 40%;
+    height: 30%;
     background: antiquewhite;
     margin-top: 15%;
     margin-left: 10%;
@@ -27,7 +39,7 @@
 
 #file_not_found {
     width: 70%;
-    height: 40%;
+    height: 30%;
     background: greenyellow;
     margin-top: 17%;
     margin-left: 15%;
@@ -63,24 +75,41 @@
     background: floralwhite;
 }
 
-#auto_restart_label {
+#restart_page{
+    width: 250px;
+    height: 30px;
+    position: fixed;
+    top: 91%;
+    left: 40%;
+}
+
+#restart_page label {
     width: 140px;
     height: 20px;
-    margin-top: 37%;
-    margin-left: 72%;
+    margin: 5px 0 0 5px;
     background: yellowgreen;
     color: black;
     font-weight: bold;
     float: left;
 }
 
-#auto_restart_label:hover {
+#restart_page label:hover {
     background: yellow;
     border: 2px solid black;
 }
 
-#restart {
-    margin-top: 37%;
-    margin-left: 0.2%;
-    z-index: 5;
+#restart_page input {
+    position: relative;
+    left: 5px;
+    top: 5px;
 }
+
+
+@media screen and (max-width: 550px) {
+    #restart_page{
+        position: fixed;
+        top: 65%;
+        left: 30%;
+    }
+}
+
