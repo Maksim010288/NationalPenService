@@ -17,7 +17,7 @@ public class MaterialEntity {
     private String machineId;
     @Column(name = "view_order")
     private String viewOrder;
-    @Column(name = "material")
+    @Column(name = "materials")
     private String material;
     @Column(name = "quantity")
     private Integer quantity;

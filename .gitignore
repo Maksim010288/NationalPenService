@@ -5,3 +5,4 @@ NationalPen.iml
 mvnw
 mvnw.cmd
 target/
+/src/test/

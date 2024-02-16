@@ -35,8 +35,8 @@ public class NationalPenController {
     public String getNameNP(Model model) {
         model.addAttribute("material", materialNationalPen.getMaterials());
         model.addAttribute("department", departmentsNationalPen.getMaterials());
-        model.addAttribute("machineId", machineId.machineId());
-        return "homepageNP";
+        model.addAttribute("machineId", machineId.getMaterials());
+        return "html/homepageNP";
     }
 
     @PostMapping("add/order")
@@ -54,7 +54,7 @@ public class NationalPenController {
     @GetMapping("get/allMaterial")
     public String getAllMaterial(Model model) {
         model.addAttribute("material", nationalPenService.getMaterials());
-        return "addOrder";
+        return "html/orders_page";
     }
 
     @PostMapping("get/allMaterial")
@@ -66,13 +66,13 @@ public class NationalPenController {
     @GetMapping("get/materials")
     public String getMaterials(Model model) {
         model.addAttribute("materials", dbNPService.viewMaterial());
-        return "getOrder";
+        return "html/show_orders";
     }
 
     @GetMapping("NationalPenService/dataDisplaySystem/get/materials")
     public String getMaterialsBy(Model model) {
         model.addAttribute("materials", dbNPService.viewMaterial());
-        return "getOrder";
+        return "html/show_orders";
     }
 
     @PostMapping("get/materials")

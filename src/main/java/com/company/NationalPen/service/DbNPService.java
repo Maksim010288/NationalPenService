@@ -35,4 +35,8 @@ public class DbNPService {
         penRepository.deleteAll();
         return url;
     }
+
+    public Integer size(){
+        return 55;
+    }
 }

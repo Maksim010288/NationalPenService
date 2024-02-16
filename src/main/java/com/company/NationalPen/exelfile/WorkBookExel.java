@@ -53,7 +53,7 @@ public class WorkBookExel {
         addNewRow(materialEntity);
 
         try {
-            FileOutputStream fileOutputStream = new FileOutputStream("D:/write.xlsx");
+            FileOutputStream fileOutputStream = new FileOutputStream("write.xlsx");
             workbook.write(fileOutputStream);
             fileOutputStream.close();
         } catch (IOException e) {

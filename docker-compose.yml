@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  postgres:
+    image: 'postgres:16'
+    container_name: 'JAVA-postgres'
+    environment:
+      - 'POSTGRES_USER=postgres'
+      - 'POSTGRES_PASSWORD=root'
+      - 'POSTGRES_DB=NationalPen'
+    ports:
+      - 5434:5432
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 1s
+
+  pgadmin:
+    image: 'dpage/pgadmin4'
+    container_name: "java-pgadmin"
+    environment:
+      - 'PGADMIN_DEFAULT_EMAIL=admin@adminEmail.com'
+      - 'PGADMIN_DEFAULT_PASSWORD=root'
+    ports:
+      - 5000:80
+
+  app:
+    build: ./
+    container_name: 'java_national_pen'
+    depends_on:
+      - postgres
+    ports:
+      - 8088:8080

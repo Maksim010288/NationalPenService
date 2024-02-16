@@ -1,0 +1,23 @@
+#view_order {
+    width: 95%;
+    height: 50%;
+    background: antiquewhite;
+    margin-left: 2.5%;
+}
+
+#view_order table {
+    width: 100%;
+    border: 2px solid black;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+#view_order_table_header th {
+    border: 2px solid black;
+    background: rgb(128, 128, 128);
+    color: white;
+}
+
+#view_order_table_body th {
+    background: floralwhite;
+}
