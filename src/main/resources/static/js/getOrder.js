@@ -17,6 +17,13 @@ function restart() {
     document.location.reload();
 }
 
+function outWindowMenu(){
+    window_menu.style.display = 'none';
+    bool = false;
+}
+view_order.addEventListener("mouseout", outWindowMenu);
+
+
 auto_restart.addEventListener("click", function () {
     if (auto_restart.innerText === 'Auto restart on') {
         auto_restart.innerText = 'Auto restart off';
