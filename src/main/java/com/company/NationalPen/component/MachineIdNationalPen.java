@@ -11,7 +11,9 @@ import java.util.List;
 @Getter
 public class MachineIdNationalPen implements NationalPenRepository {
 
-    private final String pathFile = "machine_id.txt";
+    private final String pathFileLocal = "D:\\IdeaProjects\\NationalPenProject\\NationalPen\\files\\";
+
+    private final String pathFile = pathFileLocal + "machine_id.txt";
 
     private final WriteFile writeFile = new WriteFile(pathFile);
 

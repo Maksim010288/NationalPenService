@@ -6,10 +6,23 @@
     <link rel="icon" media="all" href="/icons/favicon.ico"
           th:href="@{/icons/favicon.ico}"/>
     <link rel="stylesheet" type="text/css" media="all"
-          href="/style/orders_page.css" th:href="@{/style/orders_page.css}"/>
+          href="/style/show_orders.css" th:href="@{/style/show_orders.css}"/>
 </head>
-<body>
-<div id="header_national_pen_page"></div>
+<body id="body">
+<div id="header_national_pen_page">
+    <div id="lines">
+        <div id="line1"></div>
+        <div id="line2"></div>
+        <div id="line3"></div>
+    </div>
+</div>
+<div id="window_menu">
+<ul>
+    <li><a id="url_order" href="http://localhost:8080/get/name">Вікно замовлення</a></li>
+    <li>Про нас</li>
+    <li>Інформаційна сторінка</li>
+</ul>
+</div>
 <div id="main_window">
     <div id="view_order">
         <table id="view_order_table">
@@ -35,11 +48,11 @@
     </div>
     <form action="/get/materials" method="post">
         <div>
-            <input id="id" type="number" placeholder="Enter id element" name="idElement">
+            <label for="id"></label><input id="id" type="number" placeholder="Enter id element" name="idElement">
             <input id="del_element_by_id" type="submit" value="Delete" name="delete">
         </div>
     </form>
-    <form action="/get/materials/by" method="get">
+    <form action="/NationalPenService/dataDisplaySystem/get/materials?" method="get">
         <div id="restart_page">
             <label id="auto_restart_label">Auto restart on</label>
             <input type="submit" value="Restart">
@@ -51,5 +64,6 @@
 </div>
 
 <script th:src="@{/js/getOrder.js}"></script>
+<script th:src="@{/js/menu.js}"></script>
 </body>
 </html>

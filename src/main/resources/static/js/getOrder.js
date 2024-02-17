@@ -1,9 +1,9 @@
-let view_order = document.getElementById("view_order");
-let file_not_found = document.getElementById("file_not_found");
-let auto_restart = document.getElementById("auto_restart_label");
-let view_order_table = document.getElementById("view_order_table");
-let view_order_table_header = document.getElementById("view_order_table_header");
-let view_order_table_bode = document.querySelectorAll("#view_order_table_body");
+let view_order = $("#view_order");
+let file_not_found = $("#file_not_found");
+let auto_restart = $("#auto_restart_label");
+let view_order_table = $("#view_order_table");
+let view_order_table_header = $("#view_order_table_header");
+let view_order_table_bode = $("#view_order_table_body");
 
 
 if (view_order_table_bode.length === 0) {
@@ -21,9 +21,9 @@ function outWindowMenu(){
     window_menu.style.display = 'none';
     bool = false;
 }
-view_order.addEventListener("mouseout", outWindowMenu);
 
 
+$("#main_window").addEventListener("mouseover", outWindowMenu);
 auto_restart.addEventListener("click", function () {
     if (auto_restart.innerText === 'Auto restart on') {
         auto_restart.innerText = 'Auto restart off';

@@ -1,5 +1,5 @@
 body {
-    cursor: alias;
+    cursor: pointer;
     background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShrmwGPBPDAtu-qQtsTqu147qRL-ebMp0Y4SoaRl2gdQ&s");
 }
 
@@ -9,6 +9,49 @@ body {
     background: red;
 }
 
+#header_national_pen_page div {
+    width: 35px;
+    height: 50px;
+    position: relative;
+    top: 15px;
+    left: 0.9%;
+}
+
+#header_national_pen_page div div {
+    width: 30px;
+    height: 3px;
+    background: black;
+    margin: 6px 0 0 1px;
+}
+
+#window_menu {
+    width: 300px;
+    height: 85%;
+    background: burlywood;
+    border: 1px solid black;
+    position: absolute;
+    top: 87px;
+    left: 9px;
+    display: none;
+    z-index: 10;
+}
+
+#window_menu ul li{
+    margin-top: 10px;
+}
+
+#url_order{
+    color: black;
+    text-decoration: none;
+}
+#url_order:hover{
+    color: red;
+}
+
+#window_menu ul li:hover{
+    color: red;
+    margin-left: 10px;
+}
 
 #id {
     margin-top: 5px;
